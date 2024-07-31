@@ -11,7 +11,12 @@ FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
 SRC_URI = "git://github.com/Azure/azure-sdk-for-cpp.git;protocol=https;branch=main"
 
 SRCREV = "f757bb06e71adb829edcaf2867abc4e87c5aa23f"
-SRC_URI += "file://0001-Fixup-compiler-warning.patch"
+
+# Release: azure-identity_1.6.0
+#SRCREV = "41b3df3dd39b87e9366cc28198ac400b1b07699d"
+SRC_URI += "file://0001-Fixup-compiler-warning.patch \
+            file://0002-fix-gcc13-base64-compile-error.patch \
+            "
 PV = "1.0+git${SRCPV}"
 
 S = "${WORKDIR}/git"
